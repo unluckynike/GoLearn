@@ -42,6 +42,14 @@ func main() {
 	//以 rectProps 函数为例，该函数计算的是面积和周长。假使我们只需要计算面积，而并不关心周长的计算结果，空白符 _ 就上场了。
 	a, _ := rectProps(5, 5) //只用到了函数 rectProps 的一个返回值 area 空白符 _ 用来跳过不要的计算结果。
 	fmt.Println("只需要面积: ", a)
+
+	/*
+		5.可变参数
+		...
+	*/
+	getSum(1, 2, 3, 4)
+	getSum(1, 1, 1, 1, 1, 1, 1, 1)
+
 }
 
 func function1() {
@@ -66,4 +74,14 @@ func rectProps2(length, width int) (area, perimeter int) { //
 	area = length * width
 	perimeter = 2 * (length + width)
 	return //函数中的 return 语句没有显式返回任何值。由于 area 和 perimeter 在函数声明中指定为返回值, 因此当遇到 return 语句时, 它们将自动从函数返回。
+}
+
+// 可变参数 函数参数可以有多个值
+func getSum(nums ...int) { //可变参数必须放在参数最后一个
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		fmt.Print(nums[i])
+		sum += nums[i]
+	}
+	fmt.Println("sum: ", sum)
 }
