@@ -1,7 +1,7 @@
 package main
 
 import (
-	"GoLearn/src/demo07/rectangle"
+	"GoLearn/src/main/demo07/rectangle"
 	"fmt"
 	"log"
 )

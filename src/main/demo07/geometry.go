@@ -1,7 +1,7 @@
 package main
 
 import (
-	"GoLearn/src/demo07/rectangle" //导入自定义包
+	"GoLearn/src/main/demo07/rectangle"
 	"fmt"
 )
 
