@@ -80,9 +80,29 @@ func main() {
 	}
 	fmt.Println("sum: ", sum)
 
+	//如果只需要值并希望忽略索引，则可以通过用 _ 空白标识符替换索引来执行。
+	for _, v := range arr { // ignores index
+		fmt.Println(v)
+	}
 	/*
-		5.多纬数组
+			5.多维数组
+		Go 语言可以创建多维数组。
 	*/
+	array := [3][2]string{ //三行两列数组
+		{"lion", "tiger"},
+		{"cat", "dog"},
+		{"pigeon", "peacock"}, // this comma is necessary. The compiler will complain if you omit this comma
+	}
+	printarray(array)
+	var b_array [3][2]string
+	b_array[0][0] = "apple"
+	b_array[0][1] = "samsung"
+	b_array[1][0] = "microsoft"
+	b_array[1][1] = "google"
+	b_array[2][0] = "AT&T"
+	b_array[2][1] = "T-Mobile"
+	fmt.Printf("\n")
+	printarray(b_array)
 
 }
 
@@ -90,4 +110,13 @@ func main() {
 func changeLocal(num [5]int) {
 	num[0] = 55
 	fmt.Println("inside function ", num)
+}
+
+func printarray(a [3][2]string) {
+	for _, v1 := range a {
+		for _, v2 := range v1 {
+			fmt.Printf("%s ", v2)
+		}
+		fmt.Printf("\n")
+	}
 }
