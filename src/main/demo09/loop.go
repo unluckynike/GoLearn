@@ -96,4 +96,13 @@ func main() {
 			fmt.Printf("%d ", k)
 		}
 	}
+
+	/*
+		range
+		for 循环的 range 格式可以对 slice、map、数组、字符串等进行迭代循环。格式如下：
+
+		for key, value := range oldMap {
+		    newMap[key] = value
+		}
+	*/
 }
