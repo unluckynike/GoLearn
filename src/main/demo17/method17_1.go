@@ -100,7 +100,8 @@ func main() {
 	*/
 
 	/*
-		别名
+			别名
+		为 int 创建了一个类型别名 myInt。定义一个以 myInt 为接收器的的方法 add。
 	*/
 	num1 := myInt(5)
 	num2 := myInt(10)
