@@ -1,10 +1,14 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	"main/gin/controllers"
 	"main/gin/filter"
+	"main/gin/models"
 )
 
 func main() {
@@ -22,6 +26,13 @@ func main() {
 	//注册中间件 一定要放在前面
 	filter.RegFulter(ginserver)
 
+	//创建cookie
+	store := cookie.NewStore([]byte("secret"))
+	//路由上加入session中间件
+	ginserver.Use(sessions.Sessions("mysession", store))
+	//把数据类型注册进来 注册用户模型
+	gob.Register(models.User{})
+
 	//路由
 	controllers.Index(ginserver)
 	//restfull API风格
@@ -37,6 +48,9 @@ func main() {
 
 	//路由组
 	controllers.Course(ginserver)
+
+	//登录 session
+	controllers.Login(ginserver)
 
 	fmt.Println("成功启动 端口8000")
 

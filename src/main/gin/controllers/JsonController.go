@@ -35,14 +35,14 @@ func Json(ginServer *gin.Engine) {
 	//3. 结构体
 	ginServer.GET("json3", func(context *gin.Context) {
 		//user结构体
-		user := models.User{"Alice", "6666"}
+		user := models.User{"001", "Alice", "6666"}
 		context.JSONP(http.StatusOK, user)
 	})
 
 	//4.切片结构体
 	ginServer.GET("json4", func(context *gin.Context) {
-		user1 := models.User{"Bob", "9898"}
-		user2 := models.User{"Eric", "6556"}
+		user1 := models.User{"003", "Bob", "9898"}
+		user2 := models.User{"004", "Eric", "6556"}
 		//切片结构体
 		users := make([]models.User, 2)
 		users[0] = user1
