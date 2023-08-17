@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"main/gin/controllers"
+	"main/gin/filter"
 )
 
 func main() {
@@ -18,6 +19,9 @@ func main() {
 	//
 	//})
 
+	//注册中间件 一定要放在前面
+	filter.RegFulter(ginserver)
+
 	//路由
 	controllers.Index(ginserver)
 	//restfull API风格
@@ -30,6 +34,9 @@ func main() {
 	controllers.Redirect(ginserver)
 	//404页面处理
 	controllers.Error(ginserver)
+
+	//路由组
+	controllers.Course(ginserver)
 
 	fmt.Println("成功启动 端口8000")
 
