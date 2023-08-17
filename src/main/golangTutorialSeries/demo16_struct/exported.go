@@ -1,8 +1,8 @@
 package main
 
 import (
-	"GoLearn/src/main/demo16_struct/computer"
 	"fmt"
+	"main/golangTutorialSeries/demo16_struct/computer"
 )
 
 func main() {

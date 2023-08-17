@@ -1,9 +1,9 @@
 package main
 
 import (
-	"GoLearn/src/main/demo07/rectangle"
 	"fmt"
 	"log"
+	"main/golangTutorialSeries/demo07/rectangle"
 )
 
 /*

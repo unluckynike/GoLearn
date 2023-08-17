@@ -1,8 +1,8 @@
 package main
 
 import (
-	"GoLearn/src/main/demo07/rectangle"
 	"fmt"
+	"main/golangTutorialSeries/demo07/rectangle"
 )
 
 func main() {
