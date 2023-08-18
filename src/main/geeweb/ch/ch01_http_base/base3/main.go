@@ -16,7 +16,11 @@ import (
 )
 
 func main() {
+
+	//创建实例
 	r := gee.New()
+
+	//请求
 	r.GET("/", func(w http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(w, "URL.Path = %q\n", req.URL.Path)
 	})
