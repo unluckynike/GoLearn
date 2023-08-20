@@ -17,8 +17,12 @@ Go语言基础
 -  [菜鸟教程](https://www.runoob.com/go/go-tutorial.html)
 -  [Go 语言简明教程](https://geektutu.com/post/quick-golang.html)
 
-## 框架文档
--  [Gin Web Framework](https://gin-gonic.com/zh-cn/docs/examples/bind-single-binary-with-template/)
--  [Iris](https://www.iris-go.com/docs/#/?id=quick-start)
--  [BeeGo](https://beego.gocn.vip/beego/zh/)
+## 框架
+- web
+  -  [Gin Web Framework](https://gin-gonic.com/zh-cn/docs/examples/bind-single-binary-with-template/)
+  -  [Iris](https://www.iris-go.com/docs/#/?id=quick-start)
+  -  [BeeGo](https://beego.gocn.vip/beego/zh/)
 
+- orm
+  - [sqlx](https://jmoiron.github.io/sqlx/) | [github](https://github.com/jmoiron/sqlx)
+  - [xorm](https://xorm.io/zh/) | [github](https://github.com/go-xorm/xorm)
