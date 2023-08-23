@@ -1,7 +1,3 @@
-// Copyright 2009 The Go Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE files.
-
 package geerpc
 
 import (
@@ -112,6 +108,8 @@ func (server *Server) readRequestHeader(cc codec.Codec) (*codec.Header, error) {
 
 // Accept accepts connections on the listener and serves requests
 // for each incoming connection.
+// net.Listener 作为参数，for 循环等待 socket 连接建立，并开启子协程处理，
+// 处理过程交给了 ServerConn 方法。
 func (server *Server) Accept(lis net.Listener) {
 	for {
 		conn, err := lis.Accept()
@@ -123,6 +121,11 @@ func (server *Server) Accept(lis net.Listener) {
 	}
 }
 
+/*
+如果想启动服务，传入 listener 即可，tcp 协议和 unix 协议都支持。
+lis, _ := net.Listen("tcp", ":9999")
+geerpc.Accept(lis)
+*/
 // Accept accepts connections on the listener and serves requests
 // for each incoming connection.
 func Accept(lis net.Listener) { DefaultServer.Accept(lis) }

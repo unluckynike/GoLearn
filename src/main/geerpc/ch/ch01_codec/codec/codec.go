@@ -4,6 +4,8 @@ import (
 	"io"
 )
 
+// 客户端发送的请求包括服务名 Arith，方法名 Multiply，参数 args 三个，服务端的响应包括错误 error，返回值 reply 2 个。
+// 将请求和响应中的参数和返回值抽象为 body，剩余的信息放在 header 中，那么就可以抽象出数据结构 Heade
 type Header struct {
 	//ServiceMethod 是服务名和方法名，通常与 Go 语言中的结构体和方法相映射。
 	//Seq 是请求的序号，也可以认为是某个请求的 ID，用来区分不同的请求。
